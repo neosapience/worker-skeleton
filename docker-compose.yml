@@ -1,0 +1,21 @@
+version: '3.7'
+
+services:
+  redis:
+    image: redis:alpine
+
+  worker-test:
+    image: neosapience/appname-worker:dev
+    volumes:
+      - ./worker:/opt/code
+    env_file:
+      - app.env
+
+  worker:
+    image: neosapience/appname-worker:dev
+    volumes:
+      - ./worker:/opt/code
+    env_file:
+      - app.env
+    depends_on:
+      - redis

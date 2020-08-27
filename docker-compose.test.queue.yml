@@ -1,0 +1,7 @@
+version: '3.7'
+
+services:
+  worker-test:
+    command: pytest -lvs
+    environment:
+     - CELERY_ALWAYS_EAGER=false
