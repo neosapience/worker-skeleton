@@ -7,7 +7,7 @@ celery_app.config_from_object('app_settings.Config')
 logger = logging.getLogger(__name__)
 
 celery_app.conf.task_routes = {
-    'task_custom.*': {'queue': 'custom_queue'},
+    'task_custom.*': {'queue': 'task_custom_queue'},
 }
 
 
