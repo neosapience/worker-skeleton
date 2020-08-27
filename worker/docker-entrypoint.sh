@@ -7,7 +7,7 @@ if [ "$1" = 'celery' ]; then
         --loglevel=info \
         --pool=gevent \
         --concurrency=100 \
-        -Q=custom_queue "$@"
+        -Q=task_custom_queue "$@"
 fi
 
 exec "$@"
